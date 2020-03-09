@@ -37,14 +37,14 @@ export class EmployeeComponent implements OnInit {
   ngOnInit(){
     this.qualification=this.dataService.getQualification();
     this.experience=this.dataService.getExperience();
-    this.languages=['c', 'Java', 'CSharp', 'PHP', 'Python'];
+    this.languages=['C', 'Java', 'CSharp', 'PHP', 'Python'];
    }
    
   
   onSubmit(form : NgForm){
     console.log('in onSubmit:' , form.valid);
     if(form.value.C==true){
-      this.employee.languages.push("C");
+      this.employee.languages.push("C/C++");
     }
     if(form.value.Java==true){
       this.employee.languages.push("Java");
