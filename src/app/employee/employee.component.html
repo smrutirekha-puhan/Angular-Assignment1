@@ -1,0 +1,88 @@
+<div class="container">
+  <h2>Employee Details</h2>
+  <form #form="ngForm" ngSubmit="onSubmit()" ngNativeValidate >
+    <div class="form-group">
+      <label for="fname">First Name </label><br>
+      <input id="fname" name="fname" class="form-control" [(ngModel)]="employee.fname" /><br><br>
+
+      <label for="lname">Last Name </label><br>
+      <input id="lname" name="lname" class="form-control" [(ngModel)]="employee.lname"/><br><br>
+
+      <label for="email">Email </label><br>
+      <input id="email" name="email" class="form-control" [(ngModel)]="employee.email"/><br><br>
+
+
+      <label for="contact">Contact Number : </label><br>
+      <input id="contact" name="contact" class="form-control" [(ngModel)]="employee.contact"/><br><br>
+
+      <label for="add">Address </label><br>
+      <textarea id="add"  rows="2" cols="20" name="add" class="form-control" [(ngModel)]="employee.add">
+        </textarea><br><br>
+
+        <label for="unm">User Name </label><br>
+      <input id="unm" name="unm" class="form-control" [(ngModel)]="employee.unm"/><br><br>
+
+      <label for="pwd">Password </label><br>
+      <input id="pwd" name="pwd" class="form-control" type="password" [(ngModel)]="employee.pwd"/><br><br>
+      
+
+
+     <label>Gender</label><br>
+<div class="form-group">
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male" [(ngModel)]="employee.gender"/>
+    <label class="form-check-label" for="inlineRadio1">Male
+
+    </label>
+  </div><br>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female" [(ngModel)]="employee.gender"/>
+    <label class="form-check-label" for="inlineRadio2">Female
+
+    </label>
+  </div>
+  </div>
+  <br>
+
+
+      <div class="form-group">
+        <label for="qualification">Qualification</label>
+        <select class="form-control" id="qualification" name="qualification" [(ngModel)]="employee.qualification" >
+         
+         <option *ngFor="let type of qualification | async">
+            {{type}}
+          </option>
+        </select>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="experience">Experience</label>
+        <select class="form-control" id="experience" name="experience" [(ngModel)]="employee.experience">
+          <option *ngFor="let type of experience | async">
+            {{type}}
+          </option>
+         
+        </select>
+      </div>
+<br>
+
+
+<label id="cboxlbl">Coding Language</label><br>
+            <div id="languages" *ngFor="let language of languages">
+              <input type="checkbox" name={{language}} id={{language}} ngModel ng-model-true-value="yes">
+              <label for={{language}} ng>{{language}}</label>
+            </div>
+
+
+
+
+      
+    
+  </div>  
+      <button type="submit" name="submit" class="btn btn-primary" (click)="onSubmit(form)">Submit</button>
+  </form>
+  
+  </div>
+
+  
